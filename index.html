@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: url('https://media.istockphoto.com/id/1644722689/photo/autumn-decoration-with-leafs-on-rustic-background.webp?b=1&s=170667a&w=0&k=20&c=aRdPqMJ6LUu_5l8yLzYEEh6dJqXsTBbNRUozBCwEKjs=') center/cover no-repeat fixed;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .content-box {
+      padding: 80px 20px;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.8); 
+      border-radius: 10px; 
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .menu ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {
+      margin: 0 10px;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s ease, font-weight 0.3s ease;
+    }
+
+    .menu li a:hover {
+      color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="menu">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="content-box">
+  <h1>Welcome to Our Website</h1>
+  <p>This is a sample website with a fixed navigation menu.</p>
+  <p>Scroll down to see the effect on the navigation menu.</p>
+</div>
+
+<script>
+  window.addEventListener('scroll', function() {
+    var menu = document.querySelector('.menu');
+    if (window.scrollY > 0) {
+      menu.style.backgroundColor = '#ff0000';
+      menu.style.color = '#fff';
+    } else {
+      menu.style.backgroundColor = '#fff';
+      menu.style.color = '#333';
+    }
+  });
+
+  var menuItems = document.querySelectorAll('.menu li a');
+  menuItems.forEach(function(item) {
+    item.addEventListener('mouseover', function() {
+      this.style.fontWeight = 'bold';
+    });
+    item.addEventListener('mouseout', function() {
+      this.style.fontWeight = 'normal';
+    });
+  });
+</script>
+
+</body>
+</html>
